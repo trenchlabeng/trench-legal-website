@@ -1062,10 +1062,10 @@ function HomePage() {
       <section style={{ padding: "80px 40px", borderTop: `1px solid ${C.border}` }}>
         <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center" }}>
           <div style={{ fontFamily: "var(--serif)", fontSize: 28, fontWeight: 400, fontStyle: "italic", color: C.text, lineHeight: 1.5, marginBottom: 24 }}>
-            "We triaged 200 intakes in a single afternoon and identified three high-value cases we would have otherwise missed. It changed everything."
+            "Our case managers used to spend hours on repetitive tasks that are now handled in minutes. We've cut redundancies, nearly eliminated manual errors, and freed up our team to focus on what actually moves cases forward. It's been transformative."
           </div>
           <div style={{ fontSize: 14, fontWeight: 600, color: C.accent }}>Managing Partner</div>
-          <div style={{ fontSize: 13, color: C.textMuted }}>Top 50 Personal Injury Firm</div>
+          <div style={{ fontSize: 13, color: C.textMuted }}>Personal Injury Law Firm</div>
         </div>
       </section>
 
@@ -1404,36 +1404,6 @@ function SecurityPage() {
 function AboutPage() {
   const { go } = usePage();
 
-  const stats = [
-    { val: "500+", label: "Law firms served" },
-    { val: "$2B+", label: "In damages claimed" },
-    { val: "15+", label: "Hours saved per case" },
-    { val: "80%", label: "Faster document review" },
-  ];
-
-  const team = [
-    {
-      icon: <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>,
-      title: "Legal",
-      desc: "Our legal team includes seasoned plaintiff and defense professionals with collectively 100+ years of injury experience. They know what wins cases.",
-    },
-    {
-      icon: <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>,
-      title: "Engineering",
-      desc: "Our engineers have built products at both leading tech companies and high-growth startups. We know how to ship at scale, quickly and reliably.",
-    },
-    {
-      icon: <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>,
-      title: "Data Science",
-      desc: "Our goal is to bring transparency to an opaque industry. Our machine learning team turns messy legal data into actionable intelligence.",
-    },
-    {
-      icon: <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>,
-      title: "Growth",
-      desc: "As a fast-growing AI startup in legal tech, our growth team has experience scaling companies from zero to market leadership.",
-    },
-  ];
-
   const values = [
     {
       icon: <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>,
@@ -1457,12 +1427,6 @@ function AboutPage() {
     },
   ];
 
-  const founders = [
-    { initials: "JR", name: "Jordan Rivera", role: "Chief Executive Officer", bg: "#2D2D2D" },
-    { initials: "MC", name: "Maya Chen", role: "Chief Technology Officer", bg: "#404040" },
-    { initials: "DT", name: "Daniel Torres", role: "Chief Product Officer", bg: "#525252" },
-  ];
-
   return (
     <div style={{ paddingTop: 76 }}>
       {/* Hero */}
@@ -1478,59 +1442,6 @@ function AboutPage() {
         <button onClick={() => go("demo")} style={{ marginTop: 36, padding: "14px 32px", borderRadius: 8, background: "linear-gradient(135deg, #2D2D2D, #1A1A1A)", border: "none", color: "#FFFFFF", fontSize: 15, fontWeight: 600, cursor: "pointer", fontFamily: "inherit", boxShadow: "0 4px 24px rgba(45,45,45,0.15)" }}>
           Request a Demo
         </button>
-      </section>
-
-      {/* Stats */}
-      <section style={{ padding: "60px 40px", borderTop: `1px solid ${C.border}`, borderBottom: `1px solid ${C.border}` }}>
-        <div style={{ maxWidth: 900, margin: "0 auto" }}>
-          <p style={{ textAlign: "center", fontSize: 14, color: C.textMuted, fontWeight: 500, marginBottom: 32, letterSpacing: 0.5 }}>Trusted by leading injury firms nationwide</p>
-          <div style={{ display: "flex", justifyContent: "center", gap: 56, flexWrap: "wrap" }}>
-            {stats.map((s, i) => (
-              <div key={i} style={{ textAlign: "center" }}>
-                <div style={{ fontFamily: "var(--serif)", fontSize: 40, fontWeight: 600, color: C.accent }}>{s.val}</div>
-                <div style={{ fontSize: 13, color: C.textMuted, marginTop: 4 }}>{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Founders */}
-      <section style={{ padding: "80px 40px" }}>
-        <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
-          <span style={{ fontSize: 12, color: C.accent, fontWeight: 600, letterSpacing: 2 }}>LEADERSHIP</span>
-          <h2 style={{ fontFamily: "var(--serif)", fontSize: 36, fontWeight: 500, color: C.text, marginTop: 12, marginBottom: 48 }}>Meet our founders</h2>
-          <div style={{ display: "flex", justifyContent: "center", gap: 32, flexWrap: "wrap" }}>
-            {founders.map((f, i) => (
-              <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 16, width: 220 }}>
-                <div style={{ width: 120, height: 120, borderRadius: "50%", background: f.bg, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <span style={{ fontFamily: "var(--serif)", fontSize: 36, fontWeight: 600, color: "#FFFFFF", letterSpacing: 1 }}>{f.initials}</span>
-                </div>
-                <div>
-                  <div style={{ fontSize: 18, fontWeight: 600, color: C.text }}>{f.name}</div>
-                  <div style={{ fontSize: 13, color: C.textMuted, marginTop: 4 }}>{f.role}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Teams */}
-      <section style={{ padding: "80px 40px", background: C.bgAlt }}>
-        <div style={{ maxWidth: 1000, margin: "0 auto", textAlign: "center" }}>
-          <span style={{ fontSize: 12, color: C.accent, fontWeight: 600, letterSpacing: 2 }}>WHO WE ARE</span>
-          <h2 style={{ fontFamily: "var(--serif)", fontSize: 36, fontWeight: 500, color: C.text, marginTop: 12, marginBottom: 48 }}>Our teams</h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
-            {team.map((t, i) => (
-              <div key={i} style={{ padding: 28, background: C.bgCard, border: `1px solid ${C.borderSubtle}`, borderRadius: 14, textAlign: "left", boxShadow: "0 2px 8px rgba(0,0,0,0.04)", transition: "transform 0.3s, box-shadow 0.3s" }} onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.boxShadow = "0 8px 24px rgba(0,0,0,0.08)"; }} onMouseLeave={(e) => { e.currentTarget.style.transform = ""; e.currentTarget.style.boxShadow = "0 2px 8px rgba(0,0,0,0.04)"; }}>
-                <div style={{ width: 48, height: 48, borderRadius: 10, background: C.accentBg, display: "flex", alignItems: "center", justifyContent: "center", color: C.accent, marginBottom: 16 }}>{t.icon}</div>
-                <h3 style={{ fontSize: 17, fontWeight: 600, color: C.text, marginBottom: 8 }}>{t.title}</h3>
-                <p style={{ fontSize: 13, color: C.textSec, lineHeight: 1.6 }}>{t.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
       </section>
 
       {/* Values */}
@@ -1562,287 +1473,117 @@ function AboutPage() {
   );
 }
 
+/* ── Blog illustration generator ── */
+function getIllustration(tag, color, size) {
+  const c = color;
+  const illustrations = {
+    "Mass Torts": (
+      <svg width={size} height={size} viewBox="0 0 120 120" fill="none">
+        <rect x="38" y="30" width="44" height="60" rx="4" fill={c} opacity="0.15"/>
+        <rect x="38" y="30" width="44" height="16" rx="4" fill={c} opacity="0.3"/>
+        <rect x="42" y="26" width="36" height="8" rx="3" fill={c} opacity="0.25"/>
+        <rect x="46" y="56" width="28" height="2" rx="1" fill={c} opacity="0.3"/>
+        <rect x="46" y="62" width="20" height="2" rx="1" fill={c} opacity="0.2"/>
+        <rect x="46" y="68" width="24" height="2" rx="1" fill={c} opacity="0.25"/>
+        <ellipse cx="28" cy="55" rx="8" ry="4" fill={c} opacity="0.2" transform="rotate(-30 28 55)"/>
+        <ellipse cx="92" cy="45" rx="8" ry="4" fill={c} opacity="0.15" transform="rotate(20 92 45)"/>
+        <path d="M60 94 L52 106 L68 106 Z" fill="none" stroke={c} strokeWidth="2" opacity="0.4"/>
+      </svg>
+    ),
+    "Legislation": (
+      <svg width={size} height={size} viewBox="0 0 120 120" fill="none">
+        <rect x="30" y="45" width="60" height="45" rx="4" fill={c} opacity="0.12"/>
+        <rect x="30" y="45" width="60" height="10" rx="4" fill={c} opacity="0.2"/>
+        <rect x="52" y="42" width="16" height="8" rx="2" fill={c} opacity="0.15"/>
+        <rect x="45" y="22" width="30" height="28" rx="2" fill={c} opacity="0.18"/>
+        <rect x="50" y="28" width="18" height="2" rx="1" fill={c} opacity="0.25"/>
+        <rect x="50" y="33" width="14" height="2" rx="1" fill={c} opacity="0.2"/>
+        <polyline points="49 34 52 37 58 30" stroke={c} strokeWidth="1.5" fill="none" opacity="0.3"/>
+        <rect x="82" y="60" width="20" height="6" rx="3" fill={c} opacity="0.2" transform="rotate(-45 92 63)"/>
+        <rect x="94" y="72" width="4" height="14" rx="2" fill={c} opacity="0.15"/>
+        <rect x="90" y="86" width="12" height="4" rx="2" fill={c} opacity="0.12"/>
+      </svg>
+    ),
+    "Industry": (
+      <svg width={size} height={size} viewBox="0 0 120 120" fill="none">
+        <rect x="20" y="70" width="14" height="30" rx="2" fill={c} opacity="0.15"/>
+        <rect x="38" y="55" width="14" height="45" rx="2" fill={c} opacity="0.2"/>
+        <rect x="56" y="42" width="14" height="58" rx="2" fill={c} opacity="0.25"/>
+        <rect x="74" y="30" width="14" height="70" rx="2" fill={c} opacity="0.3"/>
+        <rect x="92" y="20" width="14" height="80" rx="2" fill={c} opacity="0.35"/>
+        <polyline points="27 65 45 50 63 38 81 26 99 16" stroke={c} strokeWidth="2" fill="none" opacity="0.4" strokeLinecap="round"/>
+        <path d="M99 16 L95 22 M99 16 L103 22" stroke={c} strokeWidth="2" fill="none" opacity="0.4" strokeLinecap="round"/>
+        <text x="58" y="18" fontSize="14" fill={c} opacity="0.3" fontWeight="700" fontFamily="var(--serif)">$</text>
+        <line x1="16" y1="100" x2="110" y2="100" stroke={c} strokeWidth="1" opacity="0.15"/>
+        <line x1="16" y1="20" x2="16" y2="100" stroke={c} strokeWidth="1" opacity="0.15"/>
+      </svg>
+    ),
+    "Case Analysis": (
+      <svg width={size} height={size} viewBox="0 0 120 120" fill="none">
+        <path d="M25 60 L55 55 L75 35 L80 37 L65 57 L95 55 L100 50 L103 52 L98 60 L103 68 L100 70 L95 65 L65 63 L80 83 L75 85 L55 65 L25 60Z" fill={c} opacity="0.15" stroke={c} strokeWidth="1" />
+        <rect x="16" y="75" width="28" height="34" rx="3" fill={c} opacity="0.12"/>
+        <rect x="20" y="80" width="18" height="2" rx="1" fill={c} opacity="0.2"/>
+        <rect x="20" y="85" width="14" height="2" rx="1" fill={c} opacity="0.15"/>
+        <rect x="20" y="90" width="20" height="2" rx="1" fill={c} opacity="0.18"/>
+        <rect x="78" y="82" width="22" height="5" rx="2.5" fill={c} opacity="0.2" transform="rotate(-30 89 85)"/>
+        <rect x="96" y="90" width="4" height="12" rx="2" fill={c} opacity="0.15"/>
+      </svg>
+    ),
+    "Technology": (
+      <svg width={size} height={size} viewBox="0 0 120 120" fill="none">
+        <path d="M60 25 Q45 25 40 35 Q32 33 30 40 Q25 42 25 50 Q22 55 25 62 Q25 70 32 75 Q35 82 42 82 Q45 88 55 88 L60 88" fill="none" stroke={c} strokeWidth="1.5" opacity="0.2"/>
+        <path d="M60 25 Q75 25 80 35 Q88 33 90 40 Q95 42 95 50 Q98 55 95 62 Q95 70 88 75 Q85 82 78 82 Q75 88 65 88 L60 88" fill="none" stroke={c} strokeWidth="1.5" opacity="0.2"/>
+        <line x1="60" y1="30" x2="60" y2="85" stroke={c} strokeWidth="1" opacity="0.12"/>
+        <circle cx="60" cy="42" r="3" fill={c} opacity="0.2"/>
+        <circle cx="60" cy="58" r="3" fill={c} opacity="0.2"/>
+        <circle cx="60" cy="74" r="3" fill={c} opacity="0.2"/>
+        <line x1="60" y1="42" x2="42" y2="42" stroke={c} strokeWidth="1" opacity="0.15"/>
+        <line x1="60" y1="42" x2="78" y2="42" stroke={c} strokeWidth="1" opacity="0.15"/>
+        <line x1="60" y1="58" x2="38" y2="58" stroke={c} strokeWidth="1" opacity="0.15"/>
+        <line x1="60" y1="58" x2="82" y2="58" stroke={c} strokeWidth="1" opacity="0.15"/>
+        <circle cx="42" cy="42" r="2" fill={c} opacity="0.25"/>
+        <circle cx="78" cy="42" r="2" fill={c} opacity="0.25"/>
+        <circle cx="38" cy="58" r="2" fill={c} opacity="0.25"/>
+        <circle cx="82" cy="58" r="2" fill={c} opacity="0.25"/>
+        <rect x="40" y="95" width="40" height="18" rx="3" fill={c} opacity="0.1"/>
+        <rect x="46" y="100" width="22" height="2" rx="1" fill={c} opacity="0.2"/>
+        <rect x="46" y="105" width="16" height="2" rx="1" fill={c} opacity="0.15"/>
+      </svg>
+    ),
+    "Legal Trends": (
+      <svg width={size} height={size} viewBox="0 0 120 120" fill="none">
+        <path d="M60 20 Q40 20 35 40 Q32 52 36 60 Q30 65 32 72 Q34 78 40 78 L40 85 Q40 90 50 90 L70 90 Q80 90 80 85 L80 78 Q86 78 88 72 Q90 65 84 60 Q88 52 85 40 Q80 20 60 20Z" fill={c} opacity="0.08" stroke={c} strokeWidth="1.2" opacity="0.18"/>
+        <path d="M48 40 Q55 35 62 40" stroke={c} strokeWidth="1.2" fill="none" opacity="0.2"/>
+        <path d="M45 48 Q55 42 68 48" stroke={c} strokeWidth="1.2" fill="none" opacity="0.18"/>
+        <path d="M48 56 Q58 50 65 56" stroke={c} strokeWidth="1.2" fill="none" opacity="0.15"/>
+        <path d="M55 65 Q55 60 60 62 Q65 60 65 65 Q65 70 60 74 Q55 70 55 65Z" fill={c} opacity="0.2"/>
+        <line x1="60" y1="95" x2="60" y2="108" stroke={c} strokeWidth="1.5" opacity="0.15"/>
+        <line x1="48" y1="95" x2="72" y2="95" stroke={c} strokeWidth="1.5" opacity="0.15"/>
+        <path d="M48 95 L45 102 L51 102 Z" fill={c} opacity="0.12"/>
+        <path d="M72 95 L69 102 L75 102 Z" fill={c} opacity="0.12"/>
+      </svg>
+    ),
+  };
+  return illustrations[tag] || illustrations["Industry"];
+}
+
 /* ══════ BLOG PAGE ══════ */
 function BlogPage() {
   const { go } = usePage();
   const [activeTag, setActiveTag] = useState("all");
   const [selectedPost, setSelectedPost] = useState(null);
+  const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const posts = [
-    {
-      id: 1, featured: true,
-      title: "GLP-1 Drug Litigation Surges: What PI Firms Need to Know About Ozempic Vision Loss Claims",
-      excerpt: "A new wave of personal injury lawsuits has emerged involving GLP-1 medications like Ozempic and Wegovy. Plaintiffs allege these widely prescribed drugs have caused serious vision problems, including non-arteritic anterior ischemic optic neuropathy. In December 2025, the Judicial Panel on Multidistrict Litigation consolidated these claims into an Eastern District of Pennsylvania MDL.",
-      tag: "Mass Torts",
-      date: "Feb 28, 2026",
-      readTime: "8 min read",
-      color: C.purple,
-      illustration: (size) => (
-        <svg width={size} height={size} viewBox="0 0 120 120" fill="none">
-          {/* Pill bottle */}
-          <rect x="38" y="30" width="44" height="60" rx="4" fill={C.purple} opacity="0.15"/>
-          <rect x="38" y="30" width="44" height="16" rx="4" fill={C.purple} opacity="0.3"/>
-          <rect x="42" y="26" width="36" height="8" rx="3" fill={C.purple} opacity="0.25"/>
-          {/* Label lines */}
-          <rect x="46" y="56" width="28" height="2" rx="1" fill={C.purple} opacity="0.3"/>
-          <rect x="46" y="62" width="20" height="2" rx="1" fill={C.purple} opacity="0.2"/>
-          <rect x="46" y="68" width="24" height="2" rx="1" fill={C.purple} opacity="0.25"/>
-          {/* Capsules floating */}
-          <ellipse cx="28" cy="55" rx="8" ry="4" fill={C.purple} opacity="0.2" transform="rotate(-30 28 55)"/>
-          <ellipse cx="92" cy="45" rx="8" ry="4" fill={C.purple} opacity="0.15" transform="rotate(20 92 45)"/>
-          <ellipse cx="85" cy="75" rx="6" ry="3" fill={C.purple} opacity="0.2" transform="rotate(-15 85 75)"/>
-          {/* Warning triangle */}
-          <path d="M60 94 L52 106 L68 106 Z" fill="none" stroke={C.purple} strokeWidth="2" opacity="0.4"/>
-          <line x1="60" y1="99" x2="60" y2="102" stroke={C.purple} strokeWidth="2" opacity="0.4"/>
-          <circle cx="60" cy="104" r="0.8" fill={C.purple} opacity="0.4"/>
-          {/* Eye symbol */}
-          <path d="M18 80 Q28 72 38 80 Q28 88 18 80Z" fill="none" stroke={C.purple} strokeWidth="1.5" opacity="0.25"/>
-          <circle cx="28" cy="80" r="3" fill={C.purple} opacity="0.2"/>
-        </svg>
-      ),
-    },
-    {
-      id: 2,
-      title: "California's PI Lawyer Regulation Initiative: What the 2026 Ballot Measure Means for Your Firm",
-      excerpt: "A proposed California constitutional amendment would require car accident victims to receive at least 75% of recovered damages and prohibit referral agreements between PI firms and medical providers.",
-      tag: "Legislation",
-      date: "Feb 24, 2026",
-      readTime: "6 min read",
-      color: C.blue,
-      illustration: (size) => (
-        <svg width={size} height={size} viewBox="0 0 120 120" fill="none">
-          {/* Ballot box */}
-          <rect x="30" y="45" width="60" height="45" rx="4" fill={C.blue} opacity="0.12"/>
-          <rect x="30" y="45" width="60" height="10" rx="4" fill={C.blue} opacity="0.2"/>
-          <rect x="52" y="42" width="16" height="8" rx="2" fill={C.blue} opacity="0.15"/>
-          {/* Ballot paper going in */}
-          <rect x="45" y="22" width="30" height="28" rx="2" fill={C.blue} opacity="0.18"/>
-          <rect x="50" y="28" width="18" height="2" rx="1" fill={C.blue} opacity="0.25"/>
-          <rect x="50" y="33" width="14" height="2" rx="1" fill={C.blue} opacity="0.2"/>
-          <rect x="50" y="38" width="20" height="2" rx="1" fill={C.blue} opacity="0.15"/>
-          {/* Check mark on ballot */}
-          <polyline points="49 34 52 37 58 30" stroke={C.blue} strokeWidth="1.5" fill="none" opacity="0.3"/>
-          {/* CA state outline simplified */}
-          <path d="M18 65 Q16 55 20 48 Q22 45 20 38 Q22 35 25 38 Q26 42 24 48 Q22 55 24 65 Q22 72 20 75 Q18 72 18 65Z" fill={C.blue} opacity="0.1" stroke={C.blue} strokeWidth="1" opacity="0.15"/>
-          {/* Gavel */}
-          <rect x="82" y="60" width="20" height="6" rx="3" fill={C.blue} opacity="0.2" transform="rotate(-45 92 63)"/>
-          <rect x="94" y="72" width="4" height="14" rx="2" fill={C.blue} opacity="0.15"/>
-          <rect x="90" y="86" width="12" height="4" rx="2" fill={C.blue} opacity="0.12"/>
-        </svg>
-      ),
-    },
-    {
-      id: 3,
-      title: "Personal Injury Market Hits $63B in 2026: Key Statistics Every Firm Should Track",
-      excerpt: "The U.S. personal injury law market is projected to surpass $63 billion in 2026. With 95% of cases settling pre-trial and AI transforming case preparation, here's what the data reveals about where the industry is heading.",
-      tag: "Industry",
-      date: "Feb 18, 2026",
-      readTime: "10 min read",
-      color: C.green,
-      illustration: (size) => (
-        <svg width={size} height={size} viewBox="0 0 120 120" fill="none">
-          {/* Chart bars */}
-          <rect x="20" y="70" width="14" height="30" rx="2" fill={C.green} opacity="0.15"/>
-          <rect x="38" y="55" width="14" height="45" rx="2" fill={C.green} opacity="0.2"/>
-          <rect x="56" y="42" width="14" height="58" rx="2" fill={C.green} opacity="0.25"/>
-          <rect x="74" y="30" width="14" height="70" rx="2" fill={C.green} opacity="0.3"/>
-          <rect x="92" y="20" width="14" height="80" rx="2" fill={C.green} opacity="0.35"/>
-          {/* Trend line */}
-          <polyline points="27 65 45 50 63 38 81 26 99 16" stroke={C.green} strokeWidth="2" fill="none" opacity="0.4" strokeLinecap="round"/>
-          {/* Arrow up */}
-          <path d="M99 16 L95 22 M99 16 L103 22" stroke={C.green} strokeWidth="2" fill="none" opacity="0.4" strokeLinecap="round"/>
-          {/* Dollar sign */}
-          <text x="58" y="18" fontSize="14" fill={C.green} opacity="0.3" fontWeight="700" fontFamily="var(--serif)">$</text>
-          {/* Axis lines */}
-          <line x1="16" y1="100" x2="110" y2="100" stroke={C.green} strokeWidth="1" opacity="0.15"/>
-          <line x1="16" y1="20" x2="16" y2="100" stroke={C.green} strokeWidth="1" opacity="0.15"/>
-        </svg>
-      ),
-    },
-    {
-      id: 4,
-      title: "UPS Flight 2976 Crash Lawsuits: Multi-Party Litigation and Aviation Liability in 2026",
-      excerpt: "Following the October 2025 crash near Louisville International Airport, families have filed wrongful death and negligence lawsuits against UPS, Boeing, and GE. These cases highlight complex multi-party liability in aviation personal injury.",
-      tag: "Case Analysis",
-      date: "Feb 12, 2026",
-      readTime: "7 min read",
-      color: C.red,
-      illustration: (size) => (
-        <svg width={size} height={size} viewBox="0 0 120 120" fill="none">
-          {/* Airplane */}
-          <path d="M25 60 L55 55 L75 35 L80 37 L65 57 L95 55 L100 50 L103 52 L98 60 L103 68 L100 70 L95 65 L65 63 L80 83 L75 85 L55 65 L25 60Z" fill={C.red} opacity="0.15" stroke={C.red} strokeWidth="1" opacity="0.25"/>
-          {/* Document/case file */}
-          <rect x="16" y="75" width="28" height="34" rx="3" fill={C.red} opacity="0.12"/>
-          <rect x="20" y="80" width="18" height="2" rx="1" fill={C.red} opacity="0.2"/>
-          <rect x="20" y="85" width="14" height="2" rx="1" fill={C.red} opacity="0.15"/>
-          <rect x="20" y="90" width="20" height="2" rx="1" fill={C.red} opacity="0.18"/>
-          <rect x="20" y="95" width="12" height="2" rx="1" fill={C.red} opacity="0.12"/>
-          {/* Gavel */}
-          <rect x="78" y="82" width="22" height="5" rx="2.5" fill={C.red} opacity="0.2" transform="rotate(-30 89 85)"/>
-          <rect x="96" y="90" width="4" height="12" rx="2" fill={C.red} opacity="0.15"/>
-          <ellipse cx="98" cy="104" rx="8" ry="3" fill={C.red} opacity="0.1"/>
-        </svg>
-      ),
-    },
-    {
-      id: 5,
-      title: "How AI Is Reshaping Personal Injury Case Preparation in 2026",
-      excerpt: "From medical chronologies generated in under 24 hours to AI-powered demand letters with full source citations, technology is fundamentally changing how PI firms prepare cases. Here's what leading firms are doing differently.",
-      tag: "Technology",
-      date: "Feb 5, 2026",
-      readTime: "9 min read",
-      color: C.accent,
-      illustration: (size) => (
-        <svg width={size} height={size} viewBox="0 0 120 120" fill="none">
-          {/* Brain outline */}
-          <path d="M60 25 Q45 25 40 35 Q32 33 30 40 Q25 42 25 50 Q22 55 25 62 Q25 70 32 75 Q35 82 42 82 Q45 88 55 88 L60 88" fill="none" stroke={C.accent} strokeWidth="1.5" opacity="0.2"/>
-          <path d="M60 25 Q75 25 80 35 Q88 33 90 40 Q95 42 95 50 Q98 55 95 62 Q95 70 88 75 Q85 82 78 82 Q75 88 65 88 L60 88" fill="none" stroke={C.accent} strokeWidth="1.5" opacity="0.2"/>
-          {/* Circuit lines */}
-          <line x1="60" y1="30" x2="60" y2="85" stroke={C.accent} strokeWidth="1" opacity="0.12"/>
-          <circle cx="60" cy="42" r="3" fill={C.accent} opacity="0.2"/>
-          <circle cx="60" cy="58" r="3" fill={C.accent} opacity="0.2"/>
-          <circle cx="60" cy="74" r="3" fill={C.accent} opacity="0.2"/>
-          {/* Branch circuits */}
-          <line x1="60" y1="42" x2="42" y2="42" stroke={C.accent} strokeWidth="1" opacity="0.15"/>
-          <line x1="60" y1="42" x2="78" y2="42" stroke={C.accent} strokeWidth="1" opacity="0.15"/>
-          <line x1="60" y1="58" x2="38" y2="58" stroke={C.accent} strokeWidth="1" opacity="0.15"/>
-          <line x1="60" y1="58" x2="82" y2="58" stroke={C.accent} strokeWidth="1" opacity="0.15"/>
-          <line x1="60" y1="74" x2="45" y2="74" stroke={C.accent} strokeWidth="1" opacity="0.15"/>
-          <line x1="60" y1="74" x2="75" y2="74" stroke={C.accent} strokeWidth="1" opacity="0.15"/>
-          {/* Nodes */}
-          <circle cx="42" cy="42" r="2" fill={C.accent} opacity="0.25"/>
-          <circle cx="78" cy="42" r="2" fill={C.accent} opacity="0.25"/>
-          <circle cx="38" cy="58" r="2" fill={C.accent} opacity="0.25"/>
-          <circle cx="82" cy="58" r="2" fill={C.accent} opacity="0.25"/>
-          <circle cx="45" cy="74" r="2" fill={C.accent} opacity="0.25"/>
-          <circle cx="75" cy="74" r="2" fill={C.accent} opacity="0.25"/>
-          {/* Document below */}
-          <rect x="40" y="95" width="40" height="18" rx="3" fill={C.accent} opacity="0.1"/>
-          <rect x="46" y="100" width="22" height="2" rx="1" fill={C.accent} opacity="0.2"/>
-          <rect x="46" y="105" width="16" height="2" rx="1" fill={C.accent} opacity="0.15"/>
-        </svg>
-      ),
-    },
-    {
-      id: 6,
-      title: "3M Earplug Settlement Nears Final Payout: $5.8B Distribution Update",
-      excerpt: "The massive 3M Combat Arms earplug litigation — which drove a 78% surge in federal PI filings — is approaching final distribution. Here's what firms handling related claims need to know about the payout timeline.",
-      tag: "Mass Torts",
-      date: "Jan 29, 2026",
-      readTime: "5 min read",
-      color: C.purple,
-      illustration: (size) => (
-        <svg width={size} height={size} viewBox="0 0 120 120" fill="none">
-          {/* Military helmet */}
-          <path d="M35 55 Q35 30 60 28 Q85 30 85 55 L82 58 Q80 60 78 58 L42 58 Q40 60 38 58 Z" fill={C.purple} opacity="0.15" stroke={C.purple} strokeWidth="1" opacity="0.2"/>
-          {/* Ear outline */}
-          <path d="M30 68 Q25 60 28 52 Q30 48 35 50 Q37 52 35 56 Q33 60 35 65 Q36 68 34 70 Q32 72 30 68Z" fill={C.purple} opacity="0.12"/>
-          <path d="M90 68 Q95 60 92 52 Q90 48 85 50 Q83 52 85 56 Q87 60 85 65 Q84 68 86 70 Q88 72 90 68Z" fill={C.purple} opacity="0.12"/>
-          {/* Earplug */}
-          <ellipse cx="33" cy="60" rx="4" ry="5" fill={C.purple} opacity="0.25"/>
-          <ellipse cx="87" cy="60" rx="4" ry="5" fill={C.purple} opacity="0.25"/>
-          {/* Dollar stack */}
-          <rect x="44" y="78" width="32" height="6" rx="3" fill={C.purple} opacity="0.15"/>
-          <rect x="46" y="84" width="32" height="6" rx="3" fill={C.purple} opacity="0.18"/>
-          <rect x="42" y="90" width="32" height="6" rx="3" fill={C.purple} opacity="0.22"/>
-          <rect x="44" y="96" width="32" height="6" rx="3" fill={C.purple} opacity="0.26"/>
-          {/* Dollar sign */}
-          <text x="55" y="95" fontSize="10" fill={C.purple} opacity="0.35" fontWeight="700">$</text>
-        </svg>
-      ),
-    },
-    {
-      id: 7,
-      title: "Mental Health Damages in PI Cases: Why Courts Are Expanding Recognition",
-      excerpt: "Claims for emotional distress, PTSD, and other mental health damages are gaining traction in court. Juries are awarding larger amounts in severe injury claims, and this trend is accelerating in 2026.",
-      tag: "Legal Trends",
-      date: "Jan 22, 2026",
-      readTime: "6 min read",
-      color: "#D97706",
-      illustration: (size) => (
-        <svg width={size} height={size} viewBox="0 0 120 120" fill="none">
-          {/* Head silhouette */}
-          <path d="M60 20 Q40 20 35 40 Q32 52 36 60 Q30 65 32 72 Q34 78 40 78 L40 85 Q40 90 50 90 L70 90 Q80 90 80 85 L80 78 Q86 78 88 72 Q90 65 84 60 Q88 52 85 40 Q80 20 60 20Z" fill="#D97706" opacity="0.08" stroke="#D97706" strokeWidth="1.2" opacity="0.18"/>
-          {/* Thought waves inside head */}
-          <path d="M48 40 Q55 35 62 40" stroke="#D97706" strokeWidth="1.2" fill="none" opacity="0.2"/>
-          <path d="M45 48 Q55 42 68 48" stroke="#D97706" strokeWidth="1.2" fill="none" opacity="0.18"/>
-          <path d="M48 56 Q58 50 65 56" stroke="#D97706" strokeWidth="1.2" fill="none" opacity="0.15"/>
-          {/* Heart symbol */}
-          <path d="M55 65 Q55 60 60 62 Q65 60 65 65 Q65 70 60 74 Q55 70 55 65Z" fill="#D97706" opacity="0.2"/>
-          {/* Scale of justice below */}
-          <line x1="60" y1="95" x2="60" y2="108" stroke="#D97706" strokeWidth="1.5" opacity="0.15"/>
-          <line x1="48" y1="95" x2="72" y2="95" stroke="#D97706" strokeWidth="1.5" opacity="0.15"/>
-          <path d="M48 95 L45 102 L51 102 Z" fill="#D97706" opacity="0.12"/>
-          <path d="M72 95 L69 102 L75 102 Z" fill="#D97706" opacity="0.12"/>
-        </svg>
-      ),
-    },
-    {
-      id: 8,
-      title: "California Doubles Auto Insurance Minimums: Impact on PI Settlements",
-      excerpt: "For the first time since the Carter administration, California has doubled mandatory insurance minimums through SB 1107. Here's how this seismic shift affects coverage availability and settlement values for PI firms.",
-      tag: "Legislation",
-      date: "Jan 15, 2026",
-      readTime: "7 min read",
-      color: C.blue,
-      illustration: (size) => (
-        <svg width={size} height={size} viewBox="0 0 120 120" fill="none">
-          {/* Car */}
-          <path d="M25 70 L30 58 Q35 50 45 50 L75 50 Q85 50 90 58 L95 70" fill={C.blue} opacity="0.1" stroke={C.blue} strokeWidth="1.2" opacity="0.2"/>
-          <rect x="22" y="70" width="76" height="16" rx="4" fill={C.blue} opacity="0.12"/>
-          {/* Wheels */}
-          <circle cx="38" cy="86" r="8" fill={C.blue} opacity="0.12" stroke={C.blue} strokeWidth="1" opacity="0.2"/>
-          <circle cx="38" cy="86" r="3" fill={C.blue} opacity="0.08"/>
-          <circle cx="82" cy="86" r="8" fill={C.blue} opacity="0.12" stroke={C.blue} strokeWidth="1" opacity="0.2"/>
-          <circle cx="82" cy="86" r="3" fill={C.blue} opacity="0.08"/>
-          {/* Windshield */}
-          <path d="M40 55 L48 70 L72 70 L80 55 Z" fill={C.blue} opacity="0.06"/>
-          {/* Shield overlay */}
-          <path d="M60 18 L45 24 L45 38 Q45 48 60 54 Q75 48 75 38 L75 24 Z" fill={C.blue} opacity="0.1" stroke={C.blue} strokeWidth="1.2" opacity="0.25"/>
-          {/* Checkmark in shield */}
-          <polyline points="52 36 57 42 68 30" stroke={C.blue} strokeWidth="2" fill="none" opacity="0.3" strokeLinecap="round"/>
-          {/* 2x label */}
-          <text x="82" y="45" fontSize="16" fill={C.blue} opacity="0.25" fontWeight="700" fontFamily="var(--sans)">2×</text>
-        </svg>
-      ),
-    },
-    {
-      id: 9,
-      title: "Wearable Data in Personal Injury Litigation: Apple Watch and Fitbit as Evidence",
-      excerpt: "Insurance companies are using wearable device data to challenge injury claims, but the same data can also support plaintiffs. Understanding how to leverage — and protect against — digital health evidence is now essential.",
-      tag: "Technology",
-      date: "Jan 8, 2026",
-      readTime: "8 min read",
-      color: C.accent,
-      illustration: (size) => (
-        <svg width={size} height={size} viewBox="0 0 120 120" fill="none">
-          {/* Watch band top */}
-          <rect x="46" y="15" width="28" height="22" rx="4" fill={C.accent} opacity="0.1"/>
-          {/* Watch face */}
-          <rect x="40" y="37" width="40" height="46" rx="10" fill={C.accent} opacity="0.12" stroke={C.accent} strokeWidth="1.2" opacity="0.2"/>
-          {/* Screen */}
-          <rect x="46" y="42" width="28" height="36" rx="4" fill={C.accent} opacity="0.06"/>
-          {/* Heart rate line */}
-          <polyline points="48 58 52 58 54 50 56 66 58 54 60 62 62 58 66 58 68 48 70 68 72 58" stroke={C.accent} strokeWidth="1.5" fill="none" opacity="0.3"/>
-          {/* Steps icon */}
-          <circle cx="52" cy="70" r="2" fill={C.accent} opacity="0.2"/>
-          <text x="56" y="72" fontSize="6" fill={C.accent} opacity="0.25" fontFamily="var(--sans)">8,420</text>
-          {/* Watch band bottom */}
-          <rect x="46" y="83" width="28" height="22" rx="4" fill={C.accent} opacity="0.1"/>
-          {/* Data points floating */}
-          <circle cx="22" cy="50" r="3" fill={C.accent} opacity="0.15"/>
-          <circle cx="18" cy="65" r="2" fill={C.accent} opacity="0.1"/>
-          <circle cx="28" cy="75" r="2.5" fill={C.accent} opacity="0.12"/>
-          <circle cx="98" cy="45" r="2.5" fill={C.accent} opacity="0.12"/>
-          <circle cx="102" cy="60" r="2" fill={C.accent} opacity="0.1"/>
-          <circle cx="95" cy="72" r="3" fill={C.accent} opacity="0.15"/>
-          {/* Connection lines */}
-          <line x1="25" y1="50" x2="40" y2="55" stroke={C.accent} strokeWidth="0.5" opacity="0.12" strokeDasharray="2 2"/>
-          <line x1="95" y1="60" x2="80" y2="58" stroke={C.accent} strokeWidth="0.5" opacity="0.12" strokeDasharray="2 2"/>
-        </svg>
-      ),
-    },
-  ];
+  const colorMap = { purple: C.purple, blue: C.blue, green: C.green, red: C.red, accent: C.accent, amber: "#D97706" };
+  const resolveColor = (c) => colorMap[c] || C.accent;
+
+  useEffect(() => {
+    fetch("/posts.json")
+      .then((r) => r.json())
+      .then((data) => { setPosts(data); setLoading(false); })
+      .catch(() => setLoading(false));
+  }, []);
 
   const tags = ["all", "Mass Torts", "Legislation", "Industry", "Case Analysis", "Technology", "Legal Trends"];
   const filtered = activeTag === "all" ? posts : posts.filter((p) => p.tag === activeTag);
@@ -1851,14 +1592,16 @@ function BlogPage() {
 
   const tagBg = (t) => {
     const p = posts.find((x) => x.tag === t);
-    return p ? `${p.color}10` : C.accentBg;
+    return p ? `${resolveColor(p.color)}10` : C.accentBg;
   };
   const tagColor = (t) => {
     const p = posts.find((x) => x.tag === t);
-    return p ? p.color : C.accent;
+    return p ? resolveColor(p.color) : C.accent;
   };
 
   if (selectedPost) {
+    const sc = resolveColor(selectedPost.color);
+    const bodyParagraphs = selectedPost.body ? selectedPost.body.split("\n\n").filter(Boolean) : [];
     return (
       <div style={{ paddingTop: 76 }}>
         <section style={{ padding: "60px 40px 0" }}>
@@ -1872,7 +1615,7 @@ function BlogPage() {
         <section style={{ padding: "0 40px" }}>
           <div style={{ maxWidth: 760, margin: "0 auto" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
-              <span style={{ fontSize: 12, padding: "4px 12px", borderRadius: 20, background: `${selectedPost.color}12`, color: selectedPost.color, fontWeight: 600 }}>{selectedPost.tag}</span>
+              <span style={{ fontSize: 12, padding: "4px 12px", borderRadius: 20, background: `${sc}12`, color: sc, fontWeight: 600 }}>{selectedPost.tag}</span>
               <span style={{ fontSize: 13, color: C.textMuted }}>{selectedPost.date}</span>
               <span style={{ fontSize: 13, color: C.textMuted }}>· {selectedPost.readTime}</span>
             </div>
@@ -1889,8 +1632,8 @@ function BlogPage() {
 
         <section style={{ padding: "0 40px" }}>
           <div style={{ maxWidth: 760, margin: "0 auto", display: "flex", justifyContent: "center", marginBottom: 40 }}>
-            <div style={{ padding: 40, background: `linear-gradient(135deg, ${selectedPost.color}08, ${selectedPost.color}04)`, borderRadius: 16, border: `1px solid ${selectedPost.color}15` }}>
-              {selectedPost.illustration(180)}
+            <div style={{ padding: 40, background: `linear-gradient(135deg, ${sc}08, ${sc}04)`, borderRadius: 16, border: `1px solid ${sc}15` }}>
+              {getIllustration(selectedPost.tag, sc, 180)}
             </div>
           </div>
         </section>
@@ -1898,18 +1641,26 @@ function BlogPage() {
         <section style={{ padding: "0 40px" }}>
           <div style={{ maxWidth: 760, margin: "0 auto" }}>
             <p style={{ fontSize: 18, color: C.text, lineHeight: 1.8, marginBottom: 24, fontFamily: "var(--serif)" }}>{selectedPost.excerpt}</p>
-            <p style={{ fontSize: 15, color: C.textSec, lineHeight: 1.8, marginBottom: 20 }}>
-              This is an evolving area of personal injury law that carries significant implications for firms handling related claims. As the legal landscape continues to shift, staying informed on developments like these is critical to case strategy and client outcomes.
-            </p>
-            <p style={{ fontSize: 15, color: C.textSec, lineHeight: 1.8, marginBottom: 20 }}>
-              For personal injury attorneys, the key takeaway is clear: proactive case preparation — powered by the right tools and up-to-date legal intelligence — remains the single most important factor in achieving favorable results for clients.
-            </p>
-            <p style={{ fontSize: 15, color: C.textSec, lineHeight: 1.8, marginBottom: 20 }}>
-              Firms that invest in structured workflows, AI-assisted document review, and streamlined intake processes are consistently outperforming those relying on manual methods alone. The data supports this: practices leveraging technology report significantly faster case turnaround times and higher settlement values.
-            </p>
-            <p style={{ fontSize: 15, color: C.textSec, lineHeight: 1.8, marginBottom: 32 }}>
-              At TrenchLegal, we're committed to helping PI firms navigate these changes with confidence. Our platform is built to support every stage of the case lifecycle — from intake through settlement — so your team can focus on what matters most: winning for your clients.
-            </p>
+            {bodyParagraphs.length > 0 ? (
+              bodyParagraphs.map((para, i) => (
+                <p key={i} style={{ fontSize: 15, color: C.textSec, lineHeight: 1.8, marginBottom: 20 }}>{para}</p>
+              ))
+            ) : (
+              <>
+                <p style={{ fontSize: 15, color: C.textSec, lineHeight: 1.8, marginBottom: 20 }}>
+                  This is an evolving area of personal injury law that carries significant implications for firms handling related claims. As the legal landscape continues to shift, staying informed on developments like these is critical to case strategy and client outcomes.
+                </p>
+                <p style={{ fontSize: 15, color: C.textSec, lineHeight: 1.8, marginBottom: 20 }}>
+                  For personal injury attorneys, the key takeaway is clear: proactive case preparation — powered by the right tools and up-to-date legal intelligence — remains the single most important factor in achieving favorable results for clients.
+                </p>
+                <p style={{ fontSize: 15, color: C.textSec, lineHeight: 1.8, marginBottom: 20 }}>
+                  Firms that invest in structured workflows, AI-assisted document review, and streamlined intake processes are consistently outperforming those relying on manual methods alone. The data supports this: practices leveraging technology report significantly faster case turnaround times and higher settlement values.
+                </p>
+                <p style={{ fontSize: 15, color: C.textSec, lineHeight: 1.8, marginBottom: 32 }}>
+                  At TrenchLegal, we're committed to helping PI firms navigate these changes with confidence. Our platform is built to support every stage of the case lifecycle — from intake through settlement — so your team can focus on what matters most: winning for your clients.
+                </p>
+              </>
+            )}
 
             <div style={{ padding: 28, background: C.accentBg, borderRadius: 14, border: `1px solid ${C.accentBorder}`, marginBottom: 40 }}>
               <h3 style={{ fontSize: 18, fontWeight: 600, color: C.text, marginBottom: 8 }}>See how TrenchLegal can help your firm</h3>
@@ -1924,7 +1675,7 @@ function BlogPage() {
               <div style={{ display: "flex", gap: 16 }}>
                 {posts.filter((p) => p.id !== selectedPost.id).slice(0, 3).map((p) => (
                   <button key={p.id} onClick={() => { setSelectedPost(p); window.scrollTo(0, 0); }} style={{ flex: 1, background: C.bgCard, border: `1px solid ${C.borderSubtle}`, borderRadius: 10, padding: "14px 16px", cursor: "pointer", fontFamily: "inherit", textAlign: "left", transition: "border-color 0.2s" }} onMouseEnter={(e) => (e.currentTarget.style.borderColor = C.accentBorder)} onMouseLeave={(e) => (e.currentTarget.style.borderColor = C.borderSubtle)}>
-                    <span style={{ fontSize: 10, padding: "2px 7px", borderRadius: 20, background: `${p.color}10`, color: p.color, fontWeight: 600 }}>{p.tag}</span>
+                    <span style={{ fontSize: 10, padding: "2px 7px", borderRadius: 20, background: `${resolveColor(p.color)}10`, color: resolveColor(p.color), fontWeight: 600 }}>{p.tag}</span>
                     <div style={{ fontSize: 13, fontWeight: 600, color: C.text, marginTop: 8, lineHeight: 1.35, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{p.title}</div>
                     <div style={{ fontSize: 11, color: C.textMuted, marginTop: 6 }}>{p.date}</div>
                   </button>
@@ -1958,57 +1709,68 @@ function BlogPage() {
         </div>
       </section>
 
-      {/* Featured post */}
-      {featured && (
-        <section style={{ padding: "0 40px 48px" }}>
-          <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-            <div onClick={() => { setSelectedPost(featured); window.scrollTo(0, 0); }} style={{ background: C.bgCard, border: `1px solid ${C.borderSubtle}`, borderRadius: 16, overflow: "hidden", display: "grid", gridTemplateColumns: "1.2fr 1fr", boxShadow: "0 4px 24px rgba(0,0,0,0.06)", cursor: "pointer", transition: "transform 0.3s, box-shadow 0.3s" }} onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.boxShadow = "0 12px 40px rgba(0,0,0,0.10)"; }} onMouseLeave={(e) => { e.currentTarget.style.transform = ""; e.currentTarget.style.boxShadow = "0 4px 24px rgba(0,0,0,0.06)"; }}>
-              <div style={{ background: `linear-gradient(135deg, ${featured.color}12, ${featured.color}06)`, display: "flex", alignItems: "center", justifyContent: "center", minHeight: 280, padding: 40 }}>
-                {featured.illustration(160)}
+      {loading ? (
+        <div style={{ padding: "80px 40px", textAlign: "center", color: C.textMuted }}>Loading posts...</div>
+      ) : posts.length === 0 ? (
+        <div style={{ padding: "80px 40px", textAlign: "center", color: C.textMuted }}>No posts yet.</div>
+      ) : (
+        <>
+          {/* Featured post */}
+          {featured && (
+            <section style={{ padding: "0 40px 48px" }}>
+              <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+                <div onClick={() => { setSelectedPost(featured); window.scrollTo(0, 0); }} style={{ background: C.bgCard, border: `1px solid ${C.borderSubtle}`, borderRadius: 16, overflow: "hidden", display: "grid", gridTemplateColumns: "1.2fr 1fr", boxShadow: "0 4px 24px rgba(0,0,0,0.06)", cursor: "pointer", transition: "transform 0.3s, box-shadow 0.3s" }} onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.boxShadow = "0 12px 40px rgba(0,0,0,0.10)"; }} onMouseLeave={(e) => { e.currentTarget.style.transform = ""; e.currentTarget.style.boxShadow = "0 4px 24px rgba(0,0,0,0.06)"; }}>
+                  <div style={{ background: `linear-gradient(135deg, ${resolveColor(featured.color)}12, ${resolveColor(featured.color)}06)`, display: "flex", alignItems: "center", justifyContent: "center", minHeight: 280, padding: 40 }}>
+                    {getIllustration(featured.tag, resolveColor(featured.color), 160)}
+                  </div>
+                  <div style={{ padding: "36px 36px 32px" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
+                      <span style={{ fontSize: 11, padding: "3px 10px", borderRadius: 20, background: `${resolveColor(featured.color)}12`, color: resolveColor(featured.color), fontWeight: 600 }}>{featured.tag}</span>
+                      <span style={{ fontSize: 11, color: C.textMuted }}>{featured.date}</span>
+                      <span style={{ fontSize: 11, color: C.textMuted }}>· {featured.readTime}</span>
+                    </div>
+                    <h2 style={{ fontFamily: "var(--serif)", fontSize: 26, fontWeight: 500, color: C.text, lineHeight: 1.3, marginBottom: 14 }}>{featured.title}</h2>
+                    <p style={{ fontSize: 14, color: C.textSec, lineHeight: 1.7 }}>{featured.excerpt}</p>
+                    <div style={{ display: "inline-flex", alignItems: "center", gap: 6, marginTop: 20, fontSize: 13, color: C.accent, fontWeight: 500 }}>
+                      Read more {I.arrow}
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div style={{ padding: "36px 36px 32px" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
-                  <span style={{ fontSize: 11, padding: "3px 10px", borderRadius: 20, background: `${featured.color}12`, color: featured.color, fontWeight: 600 }}>{featured.tag}</span>
-                  <span style={{ fontSize: 11, color: C.textMuted }}>{featured.date}</span>
-                  <span style={{ fontSize: 11, color: C.textMuted }}>· {featured.readTime}</span>
-                </div>
-                <h2 style={{ fontFamily: "var(--serif)", fontSize: 26, fontWeight: 500, color: C.text, lineHeight: 1.3, marginBottom: 14 }}>{featured.title}</h2>
-                <p style={{ fontSize: 14, color: C.textSec, lineHeight: 1.7 }}>{featured.excerpt}</p>
-                <div style={{ display: "inline-flex", alignItems: "center", gap: 6, marginTop: 20, fontSize: 13, color: C.accent, fontWeight: 500 }}>
-                  Read more {I.arrow}
-                </div>
+            </section>
+          )}
+
+          {/* Post grid */}
+          <section style={{ padding: "0 40px 80px" }}>
+            <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+                {rest.map((post) => {
+                  const pc = resolveColor(post.color);
+                  return (
+                    <div key={post.id} onClick={() => { setSelectedPost(post); window.scrollTo(0, 0); }} style={{ background: C.bgCard, border: `1px solid ${C.borderSubtle}`, borderRadius: 14, overflow: "hidden", cursor: "pointer", transition: "transform 0.3s, box-shadow 0.3s", boxShadow: "0 2px 8px rgba(0,0,0,0.04)" }} onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.boxShadow = "0 8px 28px rgba(0,0,0,0.08)"; }} onMouseLeave={(e) => { e.currentTarget.style.transform = ""; e.currentTarget.style.boxShadow = "0 2px 8px rgba(0,0,0,0.04)"; }}>
+                      <div style={{ height: 160, background: `linear-gradient(135deg, ${pc}10, ${pc}05)`, display: "flex", alignItems: "center", justifyContent: "center" }}>
+                        {getIllustration(post.tag, pc, 100)}
+                      </div>
+                      <div style={{ padding: "18px 20px 22px" }}>
+                        <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 10 }}>
+                          <span style={{ fontSize: 10, padding: "2px 8px", borderRadius: 20, background: `${pc}10`, color: pc, fontWeight: 600 }}>{post.tag}</span>
+                          <span style={{ fontSize: 10, color: C.textMuted }}>{post.date}</span>
+                        </div>
+                        <h3 style={{ fontSize: 16, fontWeight: 600, color: C.text, lineHeight: 1.35, marginBottom: 8, display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{post.title}</h3>
+                        <p style={{ fontSize: 12, color: C.textSec, lineHeight: 1.6, display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{post.excerpt}</p>
+                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 14, paddingTop: 12, borderTop: `1px solid ${C.borderSubtle}` }}>
+                          <span style={{ fontSize: 11, color: C.textMuted }}>{post.readTime}</span>
+                          <span style={{ fontSize: 12, color: C.accent, fontWeight: 500, display: "flex", alignItems: "center", gap: 4 }}>Read {I.arrow}</span>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </>
       )}
-
-      {/* Post grid */}
-      <section style={{ padding: "0 40px 80px" }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
-            {rest.map((post) => (
-              <div key={post.id} onClick={() => { setSelectedPost(post); window.scrollTo(0, 0); }} style={{ background: C.bgCard, border: `1px solid ${C.borderSubtle}`, borderRadius: 14, overflow: "hidden", cursor: "pointer", transition: "transform 0.3s, box-shadow 0.3s", boxShadow: "0 2px 8px rgba(0,0,0,0.04)" }} onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.boxShadow = "0 8px 28px rgba(0,0,0,0.08)"; }} onMouseLeave={(e) => { e.currentTarget.style.transform = ""; e.currentTarget.style.boxShadow = "0 2px 8px rgba(0,0,0,0.04)"; }}>
-                <div style={{ height: 160, background: `linear-gradient(135deg, ${post.color}10, ${post.color}05)`, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  {post.illustration(100)}
-                </div>
-                <div style={{ padding: "18px 20px 22px" }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 10 }}>
-                    <span style={{ fontSize: 10, padding: "2px 8px", borderRadius: 20, background: `${post.color}10`, color: post.color, fontWeight: 600 }}>{post.tag}</span>
-                    <span style={{ fontSize: 10, color: C.textMuted }}>{post.date}</span>
-                  </div>
-                  <h3 style={{ fontSize: 16, fontWeight: 600, color: C.text, lineHeight: 1.35, marginBottom: 8, display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{post.title}</h3>
-                  <p style={{ fontSize: 12, color: C.textSec, lineHeight: 1.6, display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{post.excerpt}</p>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 14, paddingTop: 12, borderTop: `1px solid ${C.borderSubtle}` }}>
-                    <span style={{ fontSize: 11, color: C.textMuted }}>{post.readTime}</span>
-                    <span style={{ fontSize: 12, color: C.accent, fontWeight: 500, display: "flex", alignItems: "center", gap: 4 }}>Read {I.arrow}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA */}
       <section style={{ padding: "60px 40px 100px", textAlign: "center", background: C.bgAlt }}>
